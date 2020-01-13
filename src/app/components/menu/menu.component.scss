@@ -1,0 +1,16 @@
+.navlist{
+    list-style: none;
+     padding: 0;
+    .item{
+        background-color: #3f3f3f;
+        transition: background-color .5s;
+        text-align: center;
+        margin-top: .3em;
+        padding: .5em;
+        color: #c8c8c8;
+        cursor: pointer;
+        &:hover{
+            background-color: #666666; 
+        }
+    }
+}
