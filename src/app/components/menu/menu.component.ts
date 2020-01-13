@@ -10,7 +10,7 @@ export class MenuComponent implements OnInit {
   menus = [
     {
       name: 'New Account',
-      path: ''
+      path: '/new-account'
     },
     {
       name: 'Deposit',

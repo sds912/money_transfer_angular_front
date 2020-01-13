@@ -6,11 +6,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   { 
-    path: 'home', 
+    path: 'dashboard', 
     loadChildren: () => import('./default/default.module').then(m => m.DefaultModule)
   },
   { 

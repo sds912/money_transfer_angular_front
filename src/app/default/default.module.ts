@@ -10,7 +10,7 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { HomeComponent } from '../home/home.component';
 import { AddAccountComponent } from '../pages/add-account/add-account.component';
 import { AddUserFormComponent } from '../components/add-user-form/add-user-form.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +26,8 @@ import { AddUserFormComponent } from '../components/add-user-form/add-user-form.
   ],
   imports: [
     CommonModule,
-    DefaultRoutingModule
+    DefaultRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class DefaultModule { }
