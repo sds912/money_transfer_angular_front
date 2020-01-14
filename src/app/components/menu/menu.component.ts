@@ -14,19 +14,19 @@ export class MenuComponent implements OnInit {
     },
     {
       name: 'Deposit',
-      path: ''
+      path: '/deposit'
     },
     {
-      name: 'Commisions',
-      path: ''
+      name: 'Commissions',
+      path: '/commissions'
     },
     {
       name: 'Manage Users',
-      path: ''
+      path: '/users'
     },
     {
       name: 'Manage Partners',
-      path: ''
+      path: '/partners'
     }
   ];
 

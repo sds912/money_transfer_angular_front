@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './default.component';
-import { HomeComponent } from '../home/home.component';
+import { HomeComponent } from '../pages/home/home.component';
 import { AddAccountComponent } from '../pages/add-account/add-account.component';
+import { DepositComponent } from '../pages/deposit/deposit.component';
+import { CommissionsComponent } from '../pages/commissions/commissions.component';
+import { UsersComponent } from '../pages/users/users.component';
+import { PartnersComponent } from '../pages/partners/partners.component';
 
 
 const routes: Routes = [
@@ -19,6 +23,22 @@ const routes: Routes = [
       {
         path: 'new-account',
         component: AddAccountComponent
+      },
+      {
+        path: 'deposit',
+        component: DepositComponent
+      },
+      {
+        path: 'commissions',
+        component: CommissionsComponent
+      },
+      {
+        path: 'users',
+        component: UsersComponent
+      },
+      {
+        path: 'partners',
+        component: PartnersComponent
       }
     ]
   }

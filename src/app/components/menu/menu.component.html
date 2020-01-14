@@ -1,5 +1,5 @@
 <div class="menus mt-3">
     <ul class="navlist">
-        <li routerLink="/dashboard/new-account" routerLinkActive="active"  *ngFor="let item of menus" class="item">{{item.name}}</li>
+        <li routerLink="/dashboard/{{item.path}}" routerLinkActive="active"  *ngFor="let item of menus" class="item">{{item.name}}</li>
     </ul>
 </div>
