@@ -12,4 +12,9 @@ export class UserService {
     getAll() {
         return this.http.get<User[]>(`${environment.apiUrl}/users`);
     }
+
+    saveUser(data: User)
+    {
+      return this.http.post<User>(`${environment.apiUrl}/users`,data);
+    }
 }

@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Role } from 'src/app/_models/role';
+import { RoleService } from 'src/app/_services/role.service';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-add-user-form',
@@ -9,34 +12,46 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class AddUserFormComponent implements OnInit {
 
   userForm: FormGroup;
-  roles= ['Admin', 'Cashier'];
+  roles: Role[];
+  loading: boolean = true;
 
 
-  constructor() { }
+  constructor(private roleService: RoleService, private userService: UserService) {
 
-  
-
-  ngOnInit() {
-
-    this.userForm = new FormGroup({
-        
-        'role': new FormControl('Admin',Validators.required),
-        'username': new FormControl('',Validators.required),
-        'fName':  new FormControl('',Validators.required),
-        'lName':   new FormControl('',Validators.required),
-        'email': new FormControl('', Validators.required),
-        'phone':  new FormControl('', Validators.required),
-        'address':  new FormControl('', Validators.required)
-  
-    });
-    
   }
 
+  ngOnInit() {
+    this.roleService.getAll().subscribe((res: Role[])=>{
+        this.roles = res['hydra:member'];
+        this.loading = false;
+      })
+
+
+
+    this.userForm = new FormGroup({
+        userRoles: new FormControl('',Validators.required),
+        fname:  new FormControl('',Validators.required),
+        lname:   new FormControl('',Validators.required),
+        email: new FormControl('', Validators.required),
+        phone:  new FormControl('', Validators.required),
+        address:  new FormControl('', Validators.required)
+    });
+
+  }
+  public resetForm() {
+    this.userForm = new FormGroup({
+        userRoles: new FormControl('', Validators.required ),
+    });
+}
 
   onSubmit(){
 
-    alert(JSON.stringify(this.userForm.value));
-  
+   this.loading = true;
+   this.userService.saveUser(this.userForm.value).subscribe(res => {
+      this.loading = false;
+      this.resetForm();
+   })
+
   }
 
 

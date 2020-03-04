@@ -7,6 +7,9 @@ import { DepositComponent } from '../pages/deposit/deposit.component';
 import { CommissionsComponent } from '../pages/commissions/commissions.component';
 import { UsersComponent } from '../pages/users/users.component';
 import { PartnersComponent } from '../pages/partners/partners.component';
+import { PartnerDetailsComponent } from '../components/partner-details/partner-details.component';
+import { AccountDetailsComponent } from '../components/account-details/account-details.component';
+import { SinglePartnerDetailsComponent } from '../pages/single-partner-details/single-partner-details.component';
 
 
 const routes: Routes = [
@@ -17,7 +20,7 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
-      
+
 
       },
       {
@@ -39,6 +42,10 @@ const routes: Routes = [
       {
         path: 'partners',
         component: PartnersComponent
+      },
+      {
+        path: 'partners/:id',
+        component: SinglePartnerDetailsComponent
       }
     ]
   }

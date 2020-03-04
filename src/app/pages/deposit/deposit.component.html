@@ -1,1 +1,21 @@
-<p>deposit works!</p>
+<div class="container p-0">
+    <div class="card p-0">
+        <div class="card-header px-2 py-2">
+            <input type="search" class="form-control form-control-sm bg-muted" (keyup)="searchAccount($event.target.value)" placeholder="Numéro compte">
+        </div>
+        <div class="card-body py-3" *ngIf="account !== undefined">
+            <mat-spinner *ngIf="loading"></mat-spinner>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-partner-details [partner]="account.owner"></app-partner-details>
+                </div>
+                <div class="col-sm-6">
+
+                    <app-account-details [account]="account"></app-account-details>
+                    <app-deposit-form [account]="account" (added)="isAdded($event)"></app-deposit-form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-deposit-history></app-deposit-history>
+</div>

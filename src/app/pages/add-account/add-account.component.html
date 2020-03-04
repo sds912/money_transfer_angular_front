@@ -1,1 +1,44 @@
-<app-add-user-form></app-add-user-form>
+<div class="container p-0">
+    <div class="card p-0">
+        <div class="card-header px-2 py-2 d-flex">
+            <div class="option  mt-1" *ngIf="partner === undefined">
+                <span class="fa fa-user-plus pull-right" (click)="opened = false"></span>
+            </div>
+            <input *ngIf="opened" type="search" class="form-control form-control-sm ml-1" (keyup)="searchPartner($event.target.value)" placeholder="Ninéa">
+        </div>
+        <div class="card-body py-3" *ngIf="partner !== undefined || !opened">
+            <mat-spinner *ngIf="loading"></mat-spinner>
+            <app-partner-form *ngIf="!opened"></app-partner-form>
+            <div class="row" *ngIf="opened">
+                <div class="col">
+                    <div class="partner-infos">
+                        <app-partner-details *ngIf="partner != undefined" [partner]="partner"></app-partner-details>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="account">
+                        <div class="card">
+                            <div class="card-body bg-white ">
+                                <form [formGroup]='acountForm'>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col" formGroupName="deposits">
+                                                <label for="">Dépot initial</label>
+                                                <input type="text" class="form-control form-control-sm" placeholder="Montant" formControlName="amount">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-sm btn-block btn-primary" (click)="onSubmit()" [disabled]="partner === undefined || !acountForm.valid">Créer le compte</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-account-history></app-account-history>
+</div>

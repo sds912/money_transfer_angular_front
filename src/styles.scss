@@ -1,8 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: #e5e5e5;
+}
+
+.card {
+    border: none !important;
+}
+
+.card-body {
+    background-color: #e5e5e5;
+}
+
+.btn-primary {
+    background-color: #0d77a5 !important;
+    color: #ffffff;
+     :hover {
+        color: #ffffff;
+    }
+}
+
+.btn-warning {
+    background-color: #f2a000;
+    color: #ffffff;
+    &:hover {
+        color: #ffffff;
+    }
+}
+
+.card-header {
+    background-color: #0d77a5 !important;
+    color: #ffffff;
+}
+
+label {
+    font-size: .8em !important;
+}
+
+input::placeholder {
+    font-size: .8em !important;
+}
+
+td {
+    font-size: 12px !important;
+    padding: -2px .5em !important;
+}
+
+ng-container {
+    padding: -2px .5em !important;
+}
+
+.status {
+    display: block !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -ms-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
+}
+
+.fa-ellipsis-h {
+    cursor: pointer;
+    opacity: .8;
 }

@@ -1,46 +1,47 @@
-<form [formGroup]='userForm'>
+<mat-spinner *ngIf="loading"></mat-spinner>
+<form [formGroup]='userForm' class="p-4" *ngIf="!loading">
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <select  class="form-control form-control-sm" formControlName="role" > 
-                  <option *ngFor="let role of roles" value="{{role}}" >{{role}}</option>
+                <label for="">Rôle</label>
+                <select class="form-control form-control-sm" formControlName="userRoles">
+                  <option  disabled selected value="">Choisir un rôle</option>
+                  <option *ngFor="let role of roles" value="/api/roles/{{role.id}}" >{{role.description}}</option>
                 </select>
+            </div>
+            <div class="col">
+                <label for="">Email</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Email" formControlName="email">
             </div>
         </div>
     </div>
     <div class="form-group">
         <div class="row">
             <div class="col">
-              <input type="text" class="form-control form-control-sm" placeholder="Username" formControlName="username">
+                <label for="">Prénom</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Prénom" formControlName="fname">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-sm" placeholder="Email" formControlName="email">
+                <label for="">Nom</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Last name" formControlName="lname">
             </div>
-          </div>
+        </div>
     </div>
     <div class="form-group">
         <div class="row">
             <div class="col">
-              <input type="text" class="form-control form-control-sm" placeholder="First name" formControlName="fName">
+                <label for="">Téléphone</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Téléphone" formControlName="phone">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-sm" placeholder="Last name" formControlName="lName">
+                <label for="">Adresse</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Adresse" formControlName="address">
             </div>
-          </div>
-    </div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col">
-              <input type="text" class="form-control form-control-sm" placeholder="Phone" formControlName="phone">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control form-control-sm" placeholder="Address" formControlName="address">
-            </div>
-          </div>
+        </div>
     </div>
 
     <div class="form-group">
-        <button class="btn btn-sm float-right" (click)="onSubmit()">Create</button>
+        <button class="btn btn-sm float-right" (click)="onSubmit()">Enrégistrer</button>
     </div>
-   
-  </form>
+
+</form>

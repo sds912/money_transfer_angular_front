@@ -11,8 +11,8 @@ const routes: Routes = [
     redirectTo: 'dashboard',
     pathMatch: 'full'
   },
-  { 
-    path: 'dashboard', 
+  {
+    path: 'dashboard',
     canActivate: [AuthGuard],
     loadChildren: () => import('./default/default.module').then(m => m.DefaultModule)
   },
@@ -20,11 +20,11 @@ const routes: Routes = [
      path: 'login',
      component: LoginComponent
   },
-  { 
-    path: '**', 
-    component: PageNotFoundComponent 
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
- 
+
 ];
 
 @NgModule({

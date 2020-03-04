@@ -1,0 +1,22 @@
+<div class="card card-body">
+    <table>
+        <thead>
+            <tr>
+                <th class="pl-2">N°</th>
+                <th>Date</th>
+                <th>Numéro Compte</th>
+                <th>Propriétaire</th>
+            </tr>
+        </thead>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+
+        <tbody>
+            <tr *ngFor="let account of accounts; let i = index">
+                <td class="pl-2">{{i+1}}</td>
+                <td>{{account.createdAt | date:'medium'}}</td>
+                <td>{{account.accountNumber }}</td>
+                <td>{{account.owner.user.fname + ' ' + account.owner.user.lname}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

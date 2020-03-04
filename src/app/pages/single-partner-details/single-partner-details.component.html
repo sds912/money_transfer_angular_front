@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-6">
+        <app-partner-details [partner]="partner"></app-partner-details>
+    </div>
+    <div class="col-6">
+        <app-account-details *ngFor="let account of partner.accounts" [account]="account"></app-account-details>
+    </div>
+</div>

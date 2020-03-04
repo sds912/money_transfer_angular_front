@@ -1,0 +1,20 @@
+<div class="card card-body">
+    <table>
+        <thead>
+            <tr>
+                <th class="pl-2">N°</th>
+                <th>Date</th>
+                <th>Montant</th>
+                <th>Numéro compte</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let deposit of deposits; let i = index">
+                <td class="pl-2">{{i+1}}</td>
+                <td>{{deposit.createdAt | date:'medium'}}</td>
+                <td>{{deposit.amount }}</td>
+                <td>{{deposit.account.accountNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-   
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     DefaultModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'CHAVES_GOOGLE_MAPS'
+    })
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

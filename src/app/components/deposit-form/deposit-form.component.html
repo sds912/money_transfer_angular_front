@@ -1,0 +1,12 @@
+<div class="card card-body bg-white mt-2 p-2">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <form [formGroup]="depositForm">
+        <div class="form-group">
+            <label>Montant</label>
+            <input type="text" class="form-control form-control-sm" placeholder="montant" formControlName="amount">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" (click)="onSubmit()" [disabled]="!depositForm.valid">Valider</button>
+        </div>
+    </form>
+</div>

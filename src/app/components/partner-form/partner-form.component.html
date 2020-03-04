@@ -1,0 +1,65 @@
+<form [formGroup]='partnerForm'>
+    <div class="card card-header px-3 py-2 w-50 mx-auto mb-3">
+        <div formGroupName="accounts">
+            <input type="text" class="form-control form-control-sm" placeholder="dépôt initial" formControlName="amount">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div formGroupName="user">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Email" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label for="">Prénom</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Prénom" formControlName="fname">
+                </div>
+                <div class="form-group">
+                    <label for="">Nom</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Last name" formControlName="lname">
+                </div>
+                <div class="form-group">
+                    <label for="">Téléphone Partenaire</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Téléphone" formControlName="phone">
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="">Ninéa</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Ninéa" formControlName="ninea">
+            </div>
+            <div class="form-group">
+                <label for="">Régistre commerce</label>
+                <input type="text" class="form-control form-control-sm" placeholder="RC" formControlName="rc">
+            </div>
+            <div class="form-group">
+                <label for="">Pays</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Pays" formControlName="country">
+            </div>
+            <div class="form-group">
+                <label for="">Ville</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Ville" formControlName="city">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="">Téléphone Agence</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Téléphone" formControlName="phone">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="">Address Agence</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Address" formControlName="address">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-sm float-right btn-primary" (click)="onSubmit()">Enrégistrer</button>
+    </div>
+
+</form>

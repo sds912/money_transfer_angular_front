@@ -1,3 +1,7 @@
-export class CurrentUser {
-    token?: String
+export interface CurrentUser {
+    token?: string,
+    user: {
+      username?: string,
+      name?: string
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
+import { Component, OnInit,  ViewChild, Input } from '@angular/core';
 import { User } from 'src/app/_models/user';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
@@ -10,31 +10,24 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  USER_DATA: User[];
-  displayedColumns: string[] = ['username', 'email', 'phone', 'address'];
-  dataSource: any; 
-  loading: boolean = false;
+  displayedColumns: string[] = ['lname','fname','email', 'phone','role','status','actions'];
+  @Input() dataSource: User[];
+  loading: boolean = true;
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  users: User[];
-  constructor(private usersService: UserService) { 
+  //@ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-      
+  constructor() {
+
+
   }
 
   ngOnInit() {
-     this.loading = true;
-    this.usersService.getAll().subscribe((res)=>{
-     this.dataSource = new MatTableDataSource<User>(res['hydra:member']);  
-     this.dataSource.paginator = this.paginator;
-     this.loading = false;
-    })
 
 
-  
+
   }
 
-  
+
 
 }
 

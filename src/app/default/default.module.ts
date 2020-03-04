@@ -15,12 +15,17 @@ import { DepositComponent } from '../pages/deposit/deposit.component';
 import { CommissionsComponent } from '../pages/commissions/commissions.component';
 import { UsersComponent } from '../pages/users/users.component';
 import { PartnersComponent } from '../pages/partners/partners.component';
-import { UserListItemComponent } from '../components/user-list-item/user-list-item.component';
 import { UserListComponent } from '../components/user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MaterialModule } from '../material/material.module';
+import { PartnerFormComponent } from '../components/partner-form/partner-form.component';
+import { PartnerDetailsComponent } from '../components/partner-details/partner-details.component';
+import { AccountDetailsComponent } from '../components/account-details/account-details.component';
+import { DepositFormComponent } from '../components/deposit-form/deposit-form.component';
+import { PartnerListComponent } from '../components/partner-list/partner-list.component';
+import { SinglePartnerDetailsComponent } from '../pages/single-partner-details/single-partner-details.component';
+import { DepositHistoryComponent } from '../components/deposit-history/deposit-history.component';
+import { AccountHistoryComponent } from '../components/account-history/account-history.component';
 
 
 
@@ -38,16 +43,23 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CommissionsComponent,
     UsersComponent,
     PartnersComponent,
-    UserListItemComponent,
-    UserListComponent
+    UserListComponent,
+    PartnerFormComponent,
+    PartnerDetailsComponent,
+    AccountDetailsComponent,
+    DepositFormComponent,
+    PartnerListComponent,
+    AccountDetailsComponent,
+    SinglePartnerDetailsComponent,
+    DepositHistoryComponent,
+    AccountHistoryComponent
   ],
   imports: [
     CommonModule,
     DefaultRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule
+    MaterialModule
   ]
 })
 export class DefaultModule { }
