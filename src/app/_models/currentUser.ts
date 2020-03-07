@@ -1,7 +1,8 @@
 export interface CurrentUser {
-    token?: string,
+    token?: string;
     user: {
-      username?: string,
-      name?: string
+      username?: string;
+      name?: string;
+      ninea?: string;
     }
 }

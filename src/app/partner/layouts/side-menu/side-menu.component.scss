@@ -1,0 +1,11 @@
+nav {
+    height: 100vh;
+    background-color: #ffffff;
+    li {
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+            background-color: #dddada
+        }
+    }
+}

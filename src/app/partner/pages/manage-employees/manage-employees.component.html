@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="d-flex w-100">
+                <h3>Gestion Employers</h3>
+                <button class="btn btn-sm btn-success ml-auto" routerLink="/account/add-employee">
+                   <span class="fa fa-user-plus"></span>
+                   Ajouter un employer
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="container-fluid">
+                <mat-tab-group animationDuration="0ms" class="w-100">
+                    <mat-tab label="List Employer">
+                        <app-employee-list></app-employee-list>
+                    </mat-tab>
+                    <mat-tab label="Second">Content 2</mat-tab>
+                    <mat-tab label="Third">Content 3</mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+</div>

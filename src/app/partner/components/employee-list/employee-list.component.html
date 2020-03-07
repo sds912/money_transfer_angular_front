@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row py-2 px-3">
+        <div class="col-1 align-self-center">ID</div>
+        <div class="col-3 align-self-center">
+            Info
+        </div>
+        <div class="col-2 align-self-center">
+            Compte Affecté
+        </div>
+        <div class="col-2 align-self-center">
+            Tél
+        </div>
+        <div class="col-2 align-self-center">
+            Date d'affectation
+        </div>
+        <div class="col-1 align-self-center">
+            statut
+        </div>
+        <div class="col-1 align-self-center">
+            <span class="fa fa-info"></span>
+        </div>
+    </div>
+    <app-employee-item *ngFor="let emp of employees" [employee]="emp"></app-employee-item>
+</div>

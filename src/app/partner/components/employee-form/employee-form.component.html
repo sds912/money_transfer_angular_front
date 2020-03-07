@@ -1,0 +1,50 @@
+<div class="card card-body bg-white p-0">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <form [formGroup]='employeeForm' class="p-4" *ngIf="!loading">
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="">Rôle</label>
+                    <select class="form-control form-control-sm" formControlName="userRoles">
+                    <option  disabled selected value="">Choisir un rôle</option>
+                    <option *ngFor="let role of roles" value="/api/roles/{{role.id}}" >{{role.description}}</option>
+                  </select>
+                </div>
+                <div class="col">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Email" formControlName="email">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="">Prénom</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Prénom" formControlName="fname">
+                </div>
+                <div class="col">
+                    <label for="">Nom</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Last name" formControlName="lname">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="">Téléphone</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Téléphone" formControlName="phone">
+                </div>
+                <div class="col">
+                    <label for="">Adresse</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Adresse" formControlName="address">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-sm btn-primary float-right" (click)="onSubmit()">Enrégistrer</button>
+        </div>
+
+    </form>
+
+</div>
