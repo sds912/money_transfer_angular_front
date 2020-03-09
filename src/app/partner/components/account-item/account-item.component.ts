@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Account } from '../../../_models/account';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-account-item',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-item.component.scss']
 })
 export class AccountItemComponent implements OnInit {
-
+  @Input() account: Account;
   constructor() { }
 
   ngOnInit() {

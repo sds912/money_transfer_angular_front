@@ -16,6 +16,9 @@ import { MaterialModule } from '../material/material.module';
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { EmployeeSmItemComponent } from './components/employee-sm-item/employee-sm-item.component';
+import { HomeInfoPanelComponent } from './components/home-info-panel/home-info-panel.component';
+import { AccountListComponent } from './components/account-list/account-list.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { AccountDetailsComponent } from './components/account-details/account-de
     EmployeeListComponent,
     AddEmployeeComponent,
     EmployeeFormComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    EmployeeSmItemComponent,
+    HomeInfoPanelComponent,
+    AccountListComponent
   ],
   imports: [
     CommonModule,

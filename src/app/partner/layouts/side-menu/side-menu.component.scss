@@ -1,11 +1,19 @@
 nav {
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #0a035f;
     li {
         width: 100%;
         cursor: pointer;
         &:hover {
-            background-color: #dddada
+            background-color: #0456a3
         }
     }
+    .fa {
+        color: #ffffff;
+        font-size: 26px;
+    }
+}
+
+.active {
+    background-color: #0456a3
 }

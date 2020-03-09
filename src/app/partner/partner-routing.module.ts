@@ -1,3 +1,4 @@
+import { HomeComponent } from './pages/home/home.component';
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import { ManageEmployeesComponent } from './pages/manage-employees/manage-employees.component';
 import { PartnerComponent } from './partner/partner.component';
@@ -10,6 +11,10 @@ const routes: Routes = [
     path: '',
     component: PartnerComponent,
     children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
       {
         path: 'employee',
         component: ManageEmployeesComponent

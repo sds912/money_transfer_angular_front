@@ -1,13 +1,17 @@
 <nav>
     <ul class="list-unstyled p-0 pt-5">
-        <li class="p-0 py-2">
-            <img src="assets/icon/exchange.png" width="26" height="26" class="ml-3" alt="Transactions">
-        </li>
-        <li class="p-0 py-2 my-2">
-            <img src="assets/icon/user.png" width="26" height="26" class="ml-3" alt="Gestion Employers" routerLink="/account/employee">
+        <li class="p-0 py-2" routerLink="/account/home" routerLinkActive="active">
+            <span class="fa fa-home ml-2" alt="Home"></span>
         </li>
         <li class="p-0 py-2">
-            <img src="assets/icon/chart.png" width="26" height="26" class="ml-3" alt="Statistiques">
+            <span class="fa fa-wallet ml-2" alt="Transactions"></span>
+
+        </li>
+        <li class="p-0 py-2 my-2" routerLink="/account/employee" routerLinkActive="active">
+            <span class="fa fa-users ml-2" alt="Gestion Employers"></span>
+        </li>
+        <li class="p-0 py-2">
+            <span class="fa fa-chart-pie ml-2" alt="Statistiques"></span>
         </li>
     </ul>
 </nav>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-employee-list',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-  employees = [
+ @Input() employees;
+
+ /*= [
     {
       id: 1,
       fName: 'pape',
@@ -18,6 +20,7 @@ export class EmployeeListComponent implements OnInit {
       addedAt: '12/02/2020',
       link: 'employer/1'
     }];
+    */
   constructor() { }
 
   ngOnInit() {

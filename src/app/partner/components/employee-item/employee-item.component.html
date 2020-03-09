@@ -1,26 +1,26 @@
-<div class="row py-2 px-3 bg-white employee-item">
+<div class="row py-2 px-3 bg-white employee-item mb-2">
     <div class="col-1 align-self-center">{{employee.id}}</div>
     <div class="col-3 align-self-center">
         <div class="d-inline-flex">
             <img width="26" height="26" src="../../../../assets/img/4.jpg" alt="" class="mr-2 rounded-circle align-self-center">
             <span>
             <span class="align-self-center">
-              {{employee.fName}} {{ employee.lName }} <br> {{ employee.email }}
+              {{employee.fname}} {{ employee.lname }} <br> {{ employee.email }}
             </span>
             </span>
         </div>
     </div>
     <div class="col-2 align-self-center">
-        {{employee.account}}
+        {{employee.partnerAccount.accountNumber}}
     </div>
     <div class="col-2 align-self-center">
         {{employee.phone}}
     </div>
     <div class="col-2  align-self-center">
-        {{employee.addedAt}}
+        {{employee.affectation.addedAt | date: 'short'}}
     </div>
     <div class="col-1  align-self-center">
-        <mat-slide-toggle [checked]="true"></mat-slide-toggle>
+        <mat-slide-toggle [checked]="employee.isActive"></mat-slide-toggle>
     </div>
     <div class="col-1 align-self-center">
         <a [routerLink]="employee.link" class="fa fa-ellipsis-v"></a>

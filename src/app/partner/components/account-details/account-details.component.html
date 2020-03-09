@@ -1,7 +1,8 @@
 <div class="card card-body p-2 bg-white mt-2">
     <ul class="list-unstyled mt-3">
         <li class="d-flex"> <span class="title">Numéro de compte:</span> <span class="info text-left">{{account.accountNumber}}</span> </li>
-        <li class="d-flex"> <span class="title">Date de création: </span> <span class="info text-left">{{account.createdAt | date:'medium'}}</span> </li>
+        <li class="d-flex"> <span class="title">Date de création: </span> <span class="info text-left">{{account.createdAt | date:'short'}}</span> </li>
         <li class="d-flex"> <span class="title">Solde: </span> <span class="info text-left">{{account.balance}}</span> </li>
     </ul>
+    <app-employee-sm-item *ngFor="let employee of account.employees" [employee]="employee" class="mb-2"></app-employee-sm-item>
 </div>

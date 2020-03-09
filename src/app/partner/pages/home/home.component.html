@@ -1,1 +1,40 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <div class="row mt-5 partner-infos">
+        <div class="col-3">
+            Ninéa <br> {{ partner.ninea }}
+        </div>
+        <div class="col-3">
+            Numéro RC <br> {{ partner.rc }}
+        </div>
+        <div class="col-3">
+            Téléphone <br> {{ partner.phone }}
+        </div>
+        <div class="col-3">
+            Email <br> {{ partner.user.email }}
+        </div>
+    </div>
+    <app-home-info-panel [accounts]="partner.accounts.length" [balances]="totalBalance" [employees]="partner.user.supervisorUsers.length"></app-home-info-panel>
+    <div class="row mt-5">
+        <div class="col-sm-6">
+            <div class="card card-body px-4 c-header">
+                <div class="row py-2 px-3  employee-item mb-2">
+                    <div class="col-1 align-self-center">
+
+                    </div>
+                    <div class="col-5 align-self-center text-white">
+                        Numéro compte
+                    </div>
+                    <div class="col-6 align-self-center text-white">
+                        Solde
+                    </div>
+                </div>
+                <app-account-list [accounts]="partner.accounts"></app-account-list>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card card-body bg-white">
+
+            </div>
+        </div>
+    </div>
+</div>

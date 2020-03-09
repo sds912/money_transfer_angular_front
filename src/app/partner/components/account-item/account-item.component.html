@@ -1,1 +1,11 @@
-<p>account-item works!</p>
+<div class="row py-2 px-3 bg-white account-item mb-2">
+    <div class="col-1 align-self-center">
+        <span class="fa fa-wallet"></span>
+    </div>
+    <div class="col-5 align-self-center">
+        {{ account.accountNumber }}
+    </div>
+    <div class="col-6 align-self-center">
+        {{account.balance}}
+    </div>
+</div>
